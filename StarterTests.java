@@ -5,72 +5,13 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import model.TreeUtilities;
 
-/*
- * Study carefully the test methods below. They suggest:
- * 	- the required class(es) and method(s) to be implement in the `model` package
- * 	- how the required class(es) and method(s) should be implemented
- * 
- * Requirements:
- * 	+ Do ***not*** create any new class that is not required by the starter tests.
- * 		All such classes will be ***disregarded*** when grading. 
- *   
- * 	+ Any classes you create must reside in the `model` package and be imported properly.
- * 		For example, creating a new class `Foo` in the `model` package should result in:
- * 			import model.Foo;
- * 
- * 	+ For this assignment, you should not need to declare attributes. 
- * 		But if you really want to, all attributes you declare in the model classes must be private.
- * 
- * 	+ If necessary, you may define private helper methods. 
- */
+
 
 @SuppressWarnings("unused")
 public class StarterTests {
-	/* 
-	 * Programming Requirements:
-	 * 
-	 * 	- This assignment focuses on the manipulation of: 
-	 * 		+ linked-node based trees (see the given TreeNode class) 
-	 * 		+ singly-linked nodes (see the given SLLNode class)
-	 * 
-	 * 	  Therefore, you are forbidden to use primitive arrays (e.g., Integer[], int[], String[]) 
-	 * 		for declaring attributes or local variables. Use only the TreeNode and SLLNode classes given to you.
-	 * 
-	 * 	- In addition, any use of a Java library class or method is also forbidden 
-	 * 		(that is, use selections and loops to build your solution from scratch instead):
-	 * 
-	 * 	- Here are some examples of forbidden classes/methods: 
-	 * 		- Arrays class (e.g., Arrays.copyOf)
-	 * 		- System class (e.g., System.arrayCopy)
-	 * 		- ArrayList class
-	 * 		- String class (e.g., substring).
-	 * 
-	 * 	- The use of some library classes does not require an import statement, 
-	 * 		but these classes are also forbidden to be used.
-	 * 	- Here are the exceptions (library methods which you are allowed to use if needed):
+	he exceptions (library methods which you are allowed to use if needed):
 	 * 		- String class (equals, format, length, charAt)
-	 * 
-	 * Violating the above programming requirements will result in a penalty (see the assignment instructions for details). 
-	 * 
-	 * Tests included in this class serve as documentation on how instances of Tree Utilities operate.
-	 * 
-	 * Before attempting this assignment, 
-	 * 	it is expected that you already completed background study materials as outlined in the assignment instructions. 
-	 * 
-	 * Be sure to also read the following sections from your Assignment 1 instructions PDF:
-	 * 	- The `Requirements of this Assignment` section (page 3) 
-	 * 	- Sections 0 and 1 on the background studies
-	 * 	- Section 2 on the programming tasks (particularly the hints on tasks on page 7). 
-	 */ 
 	
-	/*
-	 * Be sure to study how the TreeNode and SLLNode classes are supposed to work together
-	 * 	as illustrated in the TestGeneralTrees JUnit class.
-	 */
-	
-	/*
-	 * Tests related to getElementsOfRanks
-	 */
 	
 	@Test 
 	public void test_getElementsOfRanks_1() {
@@ -248,36 +189,10 @@ public class StarterTests {
 		n2.addChild(n5); n5.setParent(n2);
 		n2.addChild(n7); n7.setParent(n2); 
 		
-		/*
-		 * Hint: Visualize the tree constructed from the above nodes storing integers.
-		 */
 		
 		TreeUtilities u = new TreeUtilities();
 		
-		/*
-		 * Input:
-		 * 	+ The root node `n` of some general tree (see the TreeNode class) storing integers.
-		 * 
-		 * Assumptions:
-		 * 	1. Input `n` is not null.
-		 *  2. The organization of nodes in the input tree rooted at `n` is arbitrary: 
-		 *  	no ordering among child node elements can be assumed.
-		 * 
-		 * Output:
-		 * 	Return the root node (see the TreeNode class) of a string tree which:
-		 * 		- has the same branching structure as the input integer tree (rooted at `n`)
-		 * 		- stores in each node a string summarizing the following statistical information of the ***corresponding input node***:
-		 * 			* Number of descendant nodes (See the definition of what a node's descendants are in Lecture W8.)
-		 * 			* Sum of values stored in the input descendant nodes
-		 * 
-		 * Hints:
-		 * 	+ See Section 2.3 (page 7) of the instructions PDF.
-		 *       
-		 * Recommendation:
-		 * 	+ This exercise is meant to help you think recursively.
-		 * 	+ Do not waste the opportunity: your implemented method should run O(N), 
-		 * 		where `N` is the number of nodes contained in the tree rooted at input `n`. 
-		 */ 
+		
 		TreeNode<String> output = u.getStats(n2);
 		assertNull(output.getParent());
 		assertEquals("Number of descendants: 4; Sum of descendants: 345", output.getElement());
@@ -382,14 +297,6 @@ public class StarterTests {
 		assertTrue(levelOneChild1 == levelTwoChild2.getParent());
 		assertEquals("Number of descendants: 1; Sum of descendants: 138", levelTwoChild2.getElement());
 		
-		/*
-		 * Hint: Visualize the tree constructed from the above nodes storing strings.
-		 * 			How does this string tree correspond to the input integer tree?
-		 */
 	}
 	
-	/*
-	 * Jackie's suggestion: 
-	 * 	+ Try more test cases with trees of different shapes. 
-	 */
 }
